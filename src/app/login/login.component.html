@@ -1,0 +1,41 @@
+<form (ngSubmit)='loggedIn()'>
+    <div><img src="../assets/LTI_logo.jpg" alt="LTI logo" height="100px" width="100px"></div>
+
+    <div class="alert alert-danger" *ngIf="showErrorMessage">
+      <h5>Invalid Email or Password. Please try again.</h5>
+    </div>
+
+    <body class="bg-img">
+        <div class="container d-flex justify-content-center">
+            <div class="d-flex flex-column justify-content-between">
+                <div class="card mt-3 p-5">
+                    <div>
+                        <p class="mb-1" style="padding-left: 45px;">Welcome!!</p>
+                    </div>
+                    <p class="btn btn-primary btn-lg" style="color:white;"><b>User Login</b></p>
+                </div>
+                <div class="card two bg-white px-5 py-4 mb-3">
+                    <div class="form-group"><input type="email" name="uemail" class="form-control" id="mail"
+                            [(ngModel)]=login.email required><label class="form-control-placeholder"
+                            for="mail">Email</label></div>
+
+                    <div class="form-group"><input type="password" name="password" class="form-control" id="password"
+                            [(ngModel)]=login.password required><label class="form-control-placeholder"
+                            for="password">Password</label></div>
+
+                    <div style="margin-bottom: 30px;">
+                        <span class="forgot">
+                            <a>Forgot password?</a>
+                        </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="new">
+                            <a (click)="register()">New User?</a>
+                        </span>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Login<i
+                                class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</form>

@@ -1,0 +1,90 @@
+<div class="container" style="border: black 1px; background-color: white;">
+    <div class="jumbotron"
+        style=" margin-top: 10px; background-image: url('../assets/image.jpg'); background-repeat: no-repeat; background-size: cover">
+        <h1>Create a Web Account</h1>
+        <p> Please Fill Your Personal Details here </p>
+    </div>
+    <table class="table table-default">
+        <tbody>
+            <tr>
+                <td colspan="1">
+                    <form class="well form-horizontal" (ngSubmit)="saveUser()" #addForm="ngForm">
+
+                        <div class="form-group">
+                            <label for="firstName" class="col-md-4 control-label">Name</label>
+                            <div class="col-md-8 inputGroupContainer">
+                                <input id="firstName" name="firstName" [(ngModel)]="user.name"
+                                    placeholder="Enter your Name" class="form-control" type="text" required
+                                    pattern="[A-Z][a-z , ,A-Z]{2,}" #name='ngModel'>
+                                <span *ngIf="name.touched && name.invalid" class="alert-danger">
+                                    Invalid name!
+                                    First letter should be capital.
+                                    Length should be minimum of 3 characters.
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="age" class="col-md-4 control-label">Age </label>
+                            <div class="col-md-8 inputGroupContainer">
+                                <input type="number" id="age" placeholder="Age" class="form-control" name="age"
+                                    [(ngModel)]="user.age" required pattern="[2-5][0-9]{1}" min="20" max="59"
+                                    #age='ngModel'>
+                                <span *ngIf="age.touched && age.invalid" class="alert-danger">
+                                    Age should be between 20 years to 59 years.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Gender </label>
+                            <div class="col-md-8 inputGroupContainer">
+                                <select name="gender" class="form-control" [(ngModel)]="user.gender">
+                                    <option selected>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Email</label>
+                            <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group"><input id="email" name="email" [(ngModel)]="user.email"
+                                        placeholder="Email" class="form-control" type="email" required
+                                        pattern="[A-Za-z0-9.]+@[a-z0-9.]+\.[A-Za-z]{2,4}$" #email='ngModel'>
+                                </div>
+                                <span *ngIf="email.touched && email.invalid" class="alert-danger">
+                                    Invalid Email Id!
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Password</label>
+                            <div class="col-md-8 inputGroupContainer">
+                                <div class="input-group"><input id="Password" name="Password"
+                                        [(ngModel)]="user.password"
+                                        placeholder="Password must contain: Minimum 8 characters atleast 1 Capital Alphabet and 1 No."
+                                        class="form-control" type="password" required
+                                        pattern="^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$" #pwd='ngModel'>
+                                </div>
+                                <span *ngIf="pwd.touched && pwd.invalid" class="alert-danger">
+                                    Invalid Password! Password must contain: Minimum 8 characters atleast 1 Capital
+                                    Alphabet and 1 Number.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 inputGroupContainer">
+                            <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 30px;"
+                                [disabled]="!addForm.valid">Register</button>
+                        </div>
+
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

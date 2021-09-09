@@ -1,0 +1,38 @@
+<div><img src="../assets/LTI_logo.jpg" alt="LTI logo" height="100px" width="100px">
+
+    <a style="float: right; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;">
+        <button type="submit" class="btn btn-danger" (click)="logout()">LogOut</button>
+    </a>
+    <a style="float: right; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;"><b>Welcome &nbsp;{{ uname }}</b></a>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <h3>IBM Online Practise Exam</h3>
+    </div>
+</div>
+
+<div id="quiz">
+    <h2 class="text-center font-weight-normal">IBM Exam</h2>
+    <hr />
+</div>
+
+<div>
+    <p>This is just a sample exam for the IBM cloud associate certification exam.</p>
+    <p>If you qualify this, then only you can go for the actual exam</p>
+    <p>You can apply for the exam here.</p>
+
+    <div *ngIf="this.user.examTaken == 'yes' && this.user.percentScore >= 71">
+        <h4>Your previous score is : {{this.user.percentScore | number:'1.2-2'}}%&nbsp;&nbsp;&nbsp;&nbsp; <span class="alert-success"> Grade: PASS</span></h4>
+        <button type="submit" class="btn btn-success" (click)="apply()">Retake Exam Here</button>
+    </div>
+
+    <div *ngIf="this.user.examTaken == 'yes' && this.user.percentScore < 71">
+        <h4>Your previous score is : {{this.user.percentScore | number:'1.2-2'}}%&nbsp;&nbsp;&nbsp;&nbsp; <span class="alert-danger"> Grade: FAIL</span></h4>
+        <button type="submit" class="btn btn-success" (click)="apply()">Retake Exam Here</button>
+    </div>
+
+    <div *ngIf="this.user.examTaken == 'no'">
+        <button type="submit" class="btn btn-success" (click)="apply()">Take Exam Here</button>
+    </div>
+</div>

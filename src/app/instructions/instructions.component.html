@@ -1,0 +1,53 @@
+<div><img src="../assets/LTI_logo.jpg" alt="LTI logo" height="100px" width="100px">
+
+    <a style="float: right; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;">
+        <button type="submit" class="btn btn-danger" (click)="logout()">LogOut</button>
+    </a>
+    <a style="float: right; margin-right: 30px; margin-bottom: 30px; margin-top: 20px;">
+        <button type="submit" class="btn btn-success" (click)="home()">Back to Home</button>
+    </a>
+</div>
+
+<div id="quiz">
+    <h2 class="text-center font-weight-normal">Instructions</h2>
+    <hr />
+</div>
+
+<div>
+    <p>The examination will be conducted in an online proctored mode. Candidate can
+        take the test from the safe and secure environment of his/her home, with a
+        desktop/laptop/smartphone (with a webcam) and an internet connection (un-interrupted
+        internet speed is desirable).</p>
+
+    <p>Candidates are requested to take the test honestly, ethically, and should follow all the
+        instructions.</p>
+
+    <div>Basic Instructions for Online Examinations:</div>
+
+    <div><b>A. General information:</b></div>
+    <P>1. The examination will comprise of Objective type Multiple Choice Questions (MCQs)</P>
+    <P>2. All questions are compulsory and each carries One mark.</P>
+    <p>3. The total number of questions, duration of examination, will be available on your screen.</p>
+    <p>4. The topics covered in the exam will be as per the Syllabus.</p>
+    <p>5. There will be NO NEGATIVE MARKING for the wrong answers.</p>
+
+    <div><b>B. Information & Instructions:</b></div>
+    <p>1. The examination does not require using any paper, pen, pencil and calculator.</p>
+    <p>2. On computer screen every candidate will be given objective type type Multiple Choice Questions (MCQs).</p>
+    <p>3. For Multiple Choice Questions, each question has four options, and the candidate has to click the appropriate
+        option.</p>
+    <p>4. The Time of the examination begins only when the ‘Start Test’ button is pressed.</p>
+    <p>5. The examinee can move to First, Last, Previous, Next and unanswered questions by clicking on the buttons with
+        respective labels displayed on screen throughout the test.</p>
+    <p>6. The answers can be changed at any time during the test and are saved automatically.</p>
+    <p>7. It is possible to Review the answered as well as the unanswered questions.</p>
+    <p>8. The Time remaining is shown in the Right Top Corner of the screen.</p>
+    <p>9. The system automatically shuts down when the time limit is over OR alternatively if
+        examinee finishes the exam before time he can quit by pressing the ‘Submit’ button.</p>
+
+    <p><b>Important: Do not click the “Submit” button unless you want to leave early.</b></p>
+</div>
+
+<div style="margin-bottom: 50px;">
+    <button type="submit" class="btn btn-primary" (click)="startTest()">Start the test</button>
+</div>
